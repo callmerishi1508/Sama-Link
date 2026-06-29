@@ -116,9 +116,9 @@ The platform will be available at `http://localhost:3000`.
 
 ### Backend (Render)
 
-1. Create a new Render Web Service.
+1. Create a new **Render Web Service**.
 2. Connect this GitHub repository.
-3. Set the Root Directory to:
+3. Set the **Root Directory** to:
 
 ```text
 backend
@@ -140,7 +140,12 @@ frontend
 3. Add the following environment variable:
 
 ```text
-NEXT_PUBLIC_API_URL=https://sama-link-backend.onrender.com
+NEXT_PUBLIC_API_URL=<YOUR_RENDER_BACKEND_URL>
+```
+Example:
+
+```text
+NEXT_PUBLIC_API_URL=https://your-backend.onrender.com
 ```
 
 4. Deploy the application.
