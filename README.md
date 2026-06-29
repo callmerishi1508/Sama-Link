@@ -114,26 +114,38 @@ The platform will be available at `http://localhost:3000`.
 
 ## Production Deployment
 
-The project is designed for a split deployment architecture.
+### Backend (Render)
+
+1. Create a new Render Web Service.
+2. Connect this GitHub repository.
+3. Set the Root Directory to:
+
+```text
+backend
+```
+
+4. Configure all required backend environment variables.
+5. Deploy the FastAPI application.
+6. Copy the generated Render backend URL.
 
 ### Frontend (Vercel)
 
-1. Import the GitHub repository into Vercel.
-2. Configure the required frontend environment variables.
-3. Deploy the application.
-4. Vercel will automatically redeploy on every push to the `main` branch.
+1. Import this repository into Vercel.
+2. Set the Root Directory to:
 
-### Backend (Railway)
+```text
+frontend
+```
 
-1. Create a new Railway project.
-2. Connect the backend directory from the GitHub repository.
-3. Configure all required backend environment variables.
-4. Deploy the FastAPI application.
-5. Copy the generated Railway backend URL and update the frontend environment variable (`NEXT_PUBLIC_API_URL`).
+3. Add the following environment variable:
 
-### Database
+```text
+NEXT_PUBLIC_API_URL=https://sama-link-backend.onrender.com
+```
 
-The project uses **Supabase** as the managed PostgreSQL database. Configure the required Supabase environment variables in both the frontend and backend deployments.
+4. Deploy the application.
+
+The frontend will communicate with the deployed backend using the configured `NEXT_PUBLIC_API_URL`.
 
 ---
 
