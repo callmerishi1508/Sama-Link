@@ -1,0 +1,22 @@
+[project]
+name = "samalink-backend"
+version = "0.1.0"
+description = "SAMA LINK Action Intelligence Engine Backend"
+authors = []
+readme = "README.md"
+requires-python = ">=3.12"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.black]
+line-length = 100
+target-version = ['py312']
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra -q"
+testpaths = [
+    "tests",
+]
