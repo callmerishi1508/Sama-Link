@@ -114,24 +114,36 @@ The platform will be available at `http://localhost:3000`.
 
 ## Production Deployment
 
-This project is configured to deploy via Google Cloud Run.
+The project is designed for a split deployment architecture.
 
-1. **Build and Submit Docker Image:**
-   ```bash
-   gcloud builds submit --tag gcr.io/YOUR_PROJECT_ID/sama-link-backend
-   ```
-2. **Deploy to Cloud Run:**
-   ```bash
-   gcloud run deploy sama-link-backend --image gcr.io/YOUR_PROJECT_ID/sama-link-backend --platform managed
-   ```
+### Frontend (Vercel)
 
-Follow a similar Dockerfile setup for the frontend deployment on Cloud Run or Vercel.
+1. Import the GitHub repository into Vercel.
+2. Configure the required frontend environment variables.
+3. Deploy the application.
+4. Vercel will automatically redeploy on every push to the `main` branch.
+
+### Backend (Railway)
+
+1. Create a new Railway project.
+2. Connect the backend directory from the GitHub repository.
+3. Configure all required backend environment variables.
+4. Deploy the FastAPI application.
+5. Copy the generated Railway backend URL and update the frontend environment variable (`NEXT_PUBLIC_API_URL`).
+
+### Database
+
+The project uses **Supabase** as the managed PostgreSQL database. Configure the required Supabase environment variables in both the frontend and backend deployments.
 
 ---
 
-## Screenshots
+**Deployment Stack**
 
-*(Screenshots placeholder)*
+- Frontend: Vercel
+- Backend: Railway
+- Database: Supabase
+- AI: Google Gemini API
+- Maps: OpenStreetMap
 
 ---
 
